@@ -28,15 +28,7 @@ public class Main {
 
         var queryRoles = "INSERT INTO Roles (rol_Name) VALUES (?, ?)";
 
-        try (var statement = connection.prepareStatement(queryRoles)) {
-            statement.setString(1, role1);
-            statement.executeUpdate();
-
-            statement.setString(2, role2);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        setRoles(role1, role2, queryRoles);
 
         var name = "Andrey";
         var password = "password";
@@ -44,57 +36,32 @@ public class Main {
 
         var queryUsuarios = "INSERT INTO Usuario (password, nombre, email) VALUES (?, ?, ?)";
 
-        try (var statement = connection.prepareStatement(queryUsuarios)) {
-            statement.setString(1, password);
-            statement.setString(2, name);
-            statement.setString(3, email);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        insertUser(queryUsuarios, password, name, email);
+
         var idRol = 1;
         var idUsuario = 1;
 
         var queryUserRoles = "INSERT INTO User_Roles (rol_ID, user_ID) VALUES (?, ?)";
-        try (var statement = connection.prepareStatement(queryUserRoles)) {
-            statement.setInt(1, idRol);
-            statement.setInt(2, idUsuario);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
+        insertRoles(queryUserRoles, idRol, idUsuario);
 
         var queryjefes = "INSERT INTO Jefes DEFAULT VALUES";
-        try (var statement = connection.prepareStatement(queryjefes)) {
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
+        insertJefes(queryjefes);
 
         var cargo = "Administrador";
         var nombre = "Andrey";
         var jefe = 1;
 
         var queryEmpleados = "INSERT INTO Empleados (cargo, nombre,jefe) VALUES (?, ?, ?)";
-        try (var statement = connection.prepareStatement(queryEmpleados)) {
-            statement.setString(1, cargo);
-            statement.setString(2, nombre);
-            statement.setInt(3, jefe);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
+        insertEmpleado(queryEmpleados, cargo, nombre, jefe);
+
         var nombreProveedor = "Proveedor 1";
         var direccion = "Calle 1";
         var queryProveedor = "INSERT INTO Proveedor (nombre, direccion) VALUES (?, ?)";
 
-        try (var statement = connection.prepareStatement(queryProveedor)) {
-            statement.setString(1, nombreProveedor);
-            statement.setString(2, direccion);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        insertProveedor(queryProveedor, nombreProveedor, direccion);
 
         var nombreCategoria = "producto 1";
         var descripcion = "descripcion 1";
@@ -103,39 +70,17 @@ public class Main {
         var proveedor = "Proveedor 1";
         var categoria = "Categoria 1";
 
-        var queryProducto = "INSERT INTO Producto (nombre,descripcion ,precio, cantidad, proveedor,categoria) VALUES " +
-                "(?, ?, ?, ?, ?, ?)";
-        try (var statement = connection.prepareStatement(queryProducto)) {
-            statement.setString(1, nombreCategoria);
-            statement.setString(2, descripcion);
-            statement.setInt(3, precio);
-            statement.setInt(4, cantidad);
-            statement.setString(5, proveedor);
-            statement.setString(6, categoria);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        var queryProducto = "INSERT INTO Producto (nombre,descripcion ,precio, cantidad, proveedor,categoria) VALUES " + "(?, ?, ?, ?, ?, ?)";
+
+        insertProducto(queryProducto, nombreCategoria, descripcion, precio, cantidad, proveedor, categoria);
 
         var userID = 1;
         var productoID = 1;
         var queryPredido = "INSERT INTO Pedido (userID, producto_ID) VALUES (?,?) ";
 
-        try (var statement = connection.prepareStatement(queryPredido)) {
-            statement.setInt(1, userID);
-            statement.setInt(2, productoID);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-
+        insertPedido(queryPredido, userID, productoID);
 
         var queryPedidoEmpleado = "INSERT INTO Producto (nombre, descripcion, precio, proveedor, categoria) VALUES (?, ?, ?, ?, ?)";
-
-
-
-
     }
 
 
@@ -166,6 +111,92 @@ public class Main {
             statement.setInt(1, 1);
             statement.setInt(2, 1);
             statement.executeUpdate();
+        }
+    }
+
+    private static void setRoles(String role1, String role2, String queryRoles) {
+        try (var statement = connection.prepareStatement(queryRoles)) {
+            statement.setString(1, role1);
+            statement.executeUpdate();
+
+            statement.setString(2, role2);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void insertUser(String queryUsuarios, String password, String name, String email) {
+        try (var statement = connection.prepareStatement(queryUsuarios)) {
+            statement.setString(1, password);
+            statement.setString(2, name);
+            statement.setString(3, email);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void insertRoles(String queryUserRoles, int idRol, int idUsuario) {
+        try (var statement = connection.prepareStatement(queryUserRoles)) {
+            statement.setInt(1, idRol);
+            statement.setInt(2, idUsuario);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void insertJefes(String queryjefes) {
+        try (var statement = connection.prepareStatement(queryjefes)) {
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void insertEmpleado(String queryEmpleados, String cargo, String nombre, int jefe) {
+        try (var statement = connection.prepareStatement(queryEmpleados)) {
+            statement.setString(1, cargo);
+            statement.setString(2, nombre);
+            statement.setInt(3, jefe);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void insertProveedor(String queryProveedor, String nombreProveedor, String direccion) {
+        try (var statement = connection.prepareStatement(queryProveedor)) {
+            statement.setString(1, nombreProveedor);
+            statement.setString(2, direccion);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void insertProducto(String queryProducto, String nombreCategoria, String descripcion, int precio, int cantidad, String proveedor, String categoria) {
+        try (var statement = connection.prepareStatement(queryProducto)) {
+            statement.setString(1, nombreCategoria);
+            statement.setString(2, descripcion);
+            statement.setInt(3, precio);
+            statement.setInt(4, cantidad);
+            statement.setString(5, proveedor);
+            statement.setString(6, categoria);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void insertPedido(String queryPredido, int userID, int productoID) {
+        try (var statement = connection.prepareStatement(queryPredido)) {
+            statement.setInt(1, userID);
+            statement.setInt(2, productoID);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }

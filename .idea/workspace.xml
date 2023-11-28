@@ -5,39 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4a18c8-722c-4356-82c3-a33539b113b3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ASM/.idea/ASM.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CLionProjects/ejecución/Ejercicios/Ej1/.idea/Ej1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CLionProjects/ejecución/Ejercicios/Ej2/.idea/Ej2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CLionProjects/ejecución/Ejercicios/Ej3/.idea/Ej3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CLionProjects/ejecución/Ejercicios/Ej4/.idea/Ej4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CLionProjects/ejecución/Ejercicios/Ej6/.idea/Ej6.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CLionProjects/ejecución/Ejercicios/Ej7/.idea/Ej7.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CLionProjects/ejecución/untitled1/.idea/untitled1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CLionProjects/untitled/.idea/untitled.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IdeaProjects/JCG-SpringDataJPA-Example/JCG-SpringDataJPA-Example.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IdeaProjects/Proyectos completos/CadenaHotelera/CadenaHotelera.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IdeaProjects/Proyectos completos/ExtraClase/.idea/ExtraClase.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IdeaProjects/Proyectos completos/GitHub readme/.idea/GitHub readme.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IdeaProjects/Proyectos completos/proyecto2/proyecto2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IdeaProjects/core.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IdeaProjects/userCrud.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PYscrapy/.idea/PYscrapy.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PycharmProjects/PersonalBOT/.idea/PersonalBOT.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PycharmProjects/Recidencia/.idea/Recidencia.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PycharmProjects/Scraper/.idea/Scraper.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PycharmProjects/ScrapingSeleniun/.idea/ScrapingSeleniun.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PycharmProjects/contabilidad/.idea/contabilidad.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PycharmProjects/fastApiProject/.idea/fastApiProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PycharmProjects/pythonProject1/.idea/pythonProject1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PycharmProjects/pythonProject2/.idea/pythonProject2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../google_messages_scraper/.idea/google_messages_scraper.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +24,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2Yp6OoRKg4qw4wus9Qn56Cm0hHq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -73,8 +49,10 @@
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
+    "last_opened_file_path": "/home/sergio/PoblarDB",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
