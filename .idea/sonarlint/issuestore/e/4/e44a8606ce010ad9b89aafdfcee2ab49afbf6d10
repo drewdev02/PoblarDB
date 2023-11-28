@@ -1,0 +1,27 @@
+
+g	java:S112&"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8©÷ªÁÁ1
+g	java:S1125"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ª÷ªÁÁ1
+g	java:S112@"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ª÷ªÁÁ1
+g	java:S112G"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ª÷ªÁÁ1
+g	java:S112U"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ª÷ªÁÁ1
+g	java:S112`"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ª÷ªÁÁ1
+g	java:S112u"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ª÷ªÁÁ1
+h	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ª÷ªÁÁ1
+i
+java:S1192)"GDefine a constant instead of duplicating this literal "Andrey" 3 times.(Ô¿ëˆúÿÿÿÿ8¬÷ªÁÁ1
+X
+java:S6437"6Revoke and change this password, as it is compromised.(ÑšÂİÿÿÿÿÿ8Ò÷ªÁÁ1
+L	java:S106"+Replace this use of System.out by a logger.(…®¹úÿÿÿÿ8Õ÷ªÁÁ1
+L	java:S106"+Replace this use of System.out by a logger.(ùèÜÊÿÿÿÿÿ8Õ÷ªÁÁ1
+V
+java:S1481†"8Remove this unused "queryPedidoEmpleado" local variable.(Ş³»ò8è÷ªÁÁ1
+P
+java:S1068	".Remove this unused "connection" private field.(’çù†ûÿÿÿÿ8ô÷ªÁÁ1
+O
+java:S1144"-Remove this unused private "poblarDb" method.(¥‰”“úÿÿÿÿ8ô÷ªÁÁ1
+S
+java:S1144"0Remove this unused private "insertRoles" method.(ùı³½ÿÿÿÿÿ8õ÷ªÁÁ1
+V
+java:S1144™"3Remove this unused private "insertUsuarios" method.(Àÿ®Øüÿÿÿÿ8õ÷ªÁÁ1
+R
+java:S1144£"4Remove this unused private "insertUserRoles" method.(æ¨è€8õ÷ªÁÁ1
