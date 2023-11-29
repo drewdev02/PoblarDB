@@ -42,7 +42,7 @@ public class DataBase {
         }
     }
 
-    public void insertRoles(int idRol, int idUsuario) {
+    public static void insertRoles(int idRol, int idUsuario) {
         var queryUserRoles = "INSERT INTO User_Roles (rol_ID, user_ID) VALUES (?, ?)";
 
         try (var statement = connection.prepareStatement(queryUserRoles)) {
@@ -54,7 +54,7 @@ public class DataBase {
         }
     }
 
-    public void insertJefes() {
+    public static void insertJefes() {
         var queryjefes = "INSERT INTO Jefes DEFAULT VALUES";
 
         try (var statement = connection.prepareStatement(queryjefes)) {
@@ -64,7 +64,7 @@ public class DataBase {
         }
     }
 
-    public void insertEmpleado(String cargo, String nombre, int jefe) {
+    public static void insertEmpleado(String cargo, String nombre, int jefe) {
         var queryEmpleados = "INSERT INTO Empleados (cargo, nombre,jefe) VALUES (?, ?, ?)";
 
         try (var statement = connection.prepareStatement(queryEmpleados)) {
@@ -77,7 +77,7 @@ public class DataBase {
         }
     }
 
-    public void insertProveedor(String nombreProveedor, String direccion) {
+    public static void insertProveedor(String nombreProveedor, String direccion) {
         var queryProveedor = "INSERT INTO Proveedor (nombre, direccion) VALUES (?, ?)";
 
         try (var statement = connection.prepareStatement(queryProveedor)) {
@@ -90,7 +90,7 @@ public class DataBase {
     }
 
 
-    public void insertProducto(String nombreCategoria, String descripcion, int precio, int cantidad, String proveedor, String categoria) {
+    public static void insertProducto(String nombreCategoria, String descripcion, int precio, int cantidad, String proveedor, String categoria) {
         var queryProducto = "INSERT INTO Producto (nombre,descripcion ,precio, cantidad, proveedor,categoria) VALUES " + "(?, ?, ?, ?, ?, ?)";
 
         try (var statement = connection.prepareStatement(queryProducto)) {
@@ -106,7 +106,7 @@ public class DataBase {
         }
     }
 
-    public void insertPedido(int userID, int productoID) {
+    public static void insertPedido(int userID, int productoID) {
         var queryPedido = "INSERT INTO Pedido (userID, producto_ID) VALUES (?,?) ";
 
         try (var statement = connection.prepareStatement(queryPedido)) {
@@ -118,7 +118,7 @@ public class DataBase {
         }
     }
 
-    public void insertarPedidoEmpleado(int empID, int pedidoID) {
+    public static void insertarPedidoEmpleado(int empID, int pedidoID) {
         var queryPedidoEmpleado = "INSERT INTO Producto (emp_ID, pedido_ID) VALUES (?, ?)";
 
         try (var statement = connection.prepareStatement(queryPedidoEmpleado)) {
@@ -130,7 +130,7 @@ public class DataBase {
         }
     }
 
-    public void insertarAlmacen(int capacidad) {
+    public static void insertarAlmacen(int capacidad) {
         var queryAlmacen = "INSERT INTO Almacen (capacidad) VALUES (?)";
         try (var statement = connection.prepareStatement(queryAlmacen)) {
             statement.setInt(1, capacidad);
@@ -141,7 +141,7 @@ public class DataBase {
 
     }
 
-    public void insertarIventario(int productID, int almacenID, int stock) {
+    public static void insertarIventario(int productID, int almacenID, int stock) {
         var queryInventario = "INSERT INTO Inventario (product_ID, almacen_ID, stock) VALUES (?, ?, ?)";
 
         try (var statement = connection.prepareStatement(queryInventario)) {
@@ -154,7 +154,7 @@ public class DataBase {
         }
     }
 
-    public void insertarCompra(int user_ID, String fecha, int ganancia, int pedidos) {
+    public static void insertarCompra(int user_ID, String fecha, int ganancia, int pedidos) {
         var queryCompra = "INSERT INTO Compra (user_ID, fecha, ganancia, pedidos)VALUES (?, ?,?, ?)";
         try (var statement = connection.prepareStatement(queryCompra)) {
             statement.setInt(1, user_ID);
@@ -167,7 +167,7 @@ public class DataBase {
         }
     }
 
-    public void insertarHistorialComprar(int producto_ID, int cantidadCompra, int coste, String proveedorCompra) {
+    public static void insertarHistorialComprar(int producto_ID, int cantidadCompra, int coste, String proveedorCompra) {
         var queryHistorialCompra = "INSERT INTO Historial_Compra (producto_ID, cantidad, coste, proveedor) VALUES (?," + " ?,?, ?)";
         try (var statement = connection.prepareStatement(queryHistorialCompra)) {
             statement.setInt(1, producto_ID);
