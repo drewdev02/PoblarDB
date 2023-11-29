@@ -29,7 +29,9 @@ public class DataBase {
         }
     }
 
-    public static void insertUser(String queryUsuarios, String password, String name, String email) {
+    public static void insertUser(String password, String name, String email) {
+        var queryUsuarios = "INSERT INTO Usuario (password, nombre, email) VALUES (?, ?, ?)";
+
         try (var statement = connection.prepareStatement(queryUsuarios)) {
             statement.setString(1, password);
             statement.setString(2, name);
@@ -40,7 +42,9 @@ public class DataBase {
         }
     }
 
-    public void insertRoles(String queryUserRoles, int idRol, int idUsuario) {
+    public void insertRoles(int idRol, int idUsuario) {
+        var queryUserRoles = "INSERT INTO User_Roles (rol_ID, user_ID) VALUES (?, ?)";
+
         try (var statement = connection.prepareStatement(queryUserRoles)) {
             statement.setInt(1, idRol);
             statement.setInt(2, idUsuario);
@@ -50,7 +54,9 @@ public class DataBase {
         }
     }
 
-    public void insertJefes(String queryjefes) {
+    public void insertJefes() {
+        var queryjefes = "INSERT INTO Jefes DEFAULT VALUES";
+
         try (var statement = connection.prepareStatement(queryjefes)) {
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -58,7 +64,9 @@ public class DataBase {
         }
     }
 
-    public void insertEmpleado(String queryEmpleados, String cargo, String nombre, int jefe) {
+    public void insertEmpleado(String cargo, String nombre, int jefe) {
+        var queryEmpleados = "INSERT INTO Empleados (cargo, nombre,jefe) VALUES (?, ?, ?)";
+
         try (var statement = connection.prepareStatement(queryEmpleados)) {
             statement.setString(1, cargo);
             statement.setString(2, nombre);
@@ -69,7 +77,9 @@ public class DataBase {
         }
     }
 
-    public void insertProveedor(String queryProveedor, String nombreProveedor, String direccion) {
+    public void insertProveedor(String nombreProveedor, String direccion) {
+        var queryProveedor = "INSERT INTO Proveedor (nombre, direccion) VALUES (?, ?)";
+
         try (var statement = connection.prepareStatement(queryProveedor)) {
             statement.setString(1, nombreProveedor);
             statement.setString(2, direccion);
@@ -80,7 +90,9 @@ public class DataBase {
     }
 
 
-    public void insertProducto(String queryProducto, String nombreCategoria, String descripcion, int precio, int cantidad, String proveedor, String categoria) {
+    public void insertProducto(String nombreCategoria, String descripcion, int precio, int cantidad, String proveedor, String categoria) {
+        var queryProducto = "INSERT INTO Producto (nombre,descripcion ,precio, cantidad, proveedor,categoria) VALUES " + "(?, ?, ?, ?, ?, ?)";
+
         try (var statement = connection.prepareStatement(queryProducto)) {
             statement.setString(1, nombreCategoria);
             statement.setString(2, descripcion);
@@ -94,8 +106,10 @@ public class DataBase {
         }
     }
 
-    public void insertPedido(String queryPredido, int userID, int productoID) {
-        try (var statement = connection.prepareStatement(queryPredido)) {
+    public void insertPedido(int userID, int productoID) {
+        var queryPedido = "INSERT INTO Pedido (userID, producto_ID) VALUES (?,?) ";
+
+        try (var statement = connection.prepareStatement(queryPedido)) {
             statement.setInt(1, userID);
             statement.setInt(2, productoID);
             statement.executeUpdate();
