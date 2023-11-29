@@ -3,9 +3,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DataBase {
-    private static final String URL = "jdbc:postgresql://ep-late-rain-12834272.us-east-2.aws.neon.fl0.io:5432/database";
+    private static final String URL = "jdbc:postgresql://ep-gentle-surf-45942827.us-east-2.aws.neon.fl0.io:5432/inventario";
     private static final String USER = "fl0user";
-    private static final String PASSWORD = "elWFdSb9Dzt1";
+    private static final String PASSWORD = "KgrVMc9Jl6wk";
     private static Connection connection;
 
     private DataBase() {
@@ -20,7 +20,7 @@ public class DataBase {
 
 
     public static void setRoles(String role1) {
-        var queryRoles = "INSERT INTO roles (nombre) VALUES (?)";
+        var queryRoles = "INSERT INTO roles (rol_Name) VALUES (?)";
         try (var statement = connection.prepareStatement(queryRoles)) {
             statement.setString(1, role1);
             statement.executeUpdate();
@@ -65,7 +65,7 @@ public class DataBase {
     }
 
     public static void insertEmpleado(String cargo, String nombre, int jefe) {
-        var queryEmpleados = "INSERT INTO Empleados (cargo, nombre,jefe) VALUES (?, ?, ?)";
+        var queryEmpleados = "INSERT INTO Empleado (cargo, nombre,jefe) VALUES (?, ?, ?)";
 
         try (var statement = connection.prepareStatement(queryEmpleados)) {
             statement.setString(1, cargo);
@@ -90,16 +90,15 @@ public class DataBase {
     }
 
 
-    public static void insertProducto(String nombreCategoria, String descripcion, int precio, int cantidad, String proveedor, String categoria) {
-        var queryProducto = "INSERT INTO Producto (nombre,descripcion ,precio, cantidad, proveedor,categoria) VALUES " + "(?, ?, ?, ?, ?, ?)";
+    public static void insertProducto(String nombreCategoria, String descripcion, int precio, int proveedor, String categoria) {
+        var queryProducto = "INSERT INTO Producto (nombre,descripcion ,precio, proveedor,categoria) VALUES " + "( ?, ?, ?, ?, ?)";
 
         try (var statement = connection.prepareStatement(queryProducto)) {
             statement.setString(1, nombreCategoria);
             statement.setString(2, descripcion);
             statement.setInt(3, precio);
-            statement.setInt(4, cantidad);
-            statement.setString(5, proveedor);
-            statement.setString(6, categoria);
+            statement.setInt(4, proveedor);
+            statement.setString(5, categoria);
             statement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -167,13 +166,14 @@ public class DataBase {
         }
     }
 
-    public static void insertarHistorialComprar(int producto_ID, int cantidadCompra, int coste, String proveedorCompra) {
-        var queryHistorialCompra = "INSERT INTO Historial_Compra (producto_ID, cantidad, coste, proveedor) VALUES (?," + " ?,?, ?)";
+    public static void insertarHistorialComprar(int producto_ID, int cantidadCompra, int coste, int proveedorCompra) {
+        var queryHistorialCompra = "INSERT INTO Historial_Compra (producto_ID, cantidad, coste, proveedor) VALUES (?," +
+                " ?,?, ?)";
         try (var statement = connection.prepareStatement(queryHistorialCompra)) {
             statement.setInt(1, producto_ID);
             statement.setInt(2, cantidadCompra);
             statement.setInt(3, coste);
-            statement.setString(4, proveedorCompra);
+            statement.setInt(4, proveedorCompra);
             statement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
