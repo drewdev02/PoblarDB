@@ -2,6 +2,7 @@ import com.thedeanda.lorem.Lorem;
 import com.thedeanda.lorem.LoremIpsum;
 import lombok.Data;
 
+import java.sql.Date;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Random;
@@ -36,22 +37,31 @@ public class Datos {
     private static Lorem lorem = LoremIpsum.getInstance();
     private static String[] cargos = {"Gerente", "Supervisor", "Empleado"};
     private static String[] direcciones = generarDirecciones();
+    private static String[] metodoEnvio = {"Envío estándar", "Envío express", "Recogida en tienda", "Envío urgente",
+            "Envío internacional"};
 
     public static String getCategoria() {
-        return categorias.get(random.nextInt(categorias.size() - 1));
+        var i = categorias.size() < 2 ? 1 : categorias.size() - 1;
+        var index = random.nextInt(i);
+        return categorias.get(index < 0 ? 0 : index);
     }
 
     public static String getProducto(String categoria) {
         var productosCategoria = productos.get(categorias.indexOf(categoria));
-        return productosCategoria.get(random.nextInt(productosCategoria.size() - 1));
+        var i = productosCategoria.size() < 2 ? 1 : productosCategoria.size() - 1;
+        var index = random.nextInt(i);
+        return productosCategoria.get(index < 0 ? 0 : index);
     }
 
     public static String getDireccion() {
-        return direcciones[random.nextInt(direcciones.length - 1)];
+        var i = direcciones.length < 2 ? 1 : direcciones.length - 1;
+        var index = random.nextInt(i);
+        return direcciones[index < 0 ? 0 : index];
     }
 
     public static String getCargo() {
-        return cargos[random.nextInt(cargos.length - 1)];
+        var index = random.nextInt(cargos.length - 1);
+        return cargos[index < 0 ? 0 : index];
     }
 
     public static String getName() {
@@ -62,9 +72,10 @@ public class Datos {
         return lorem.getWords(words);
     }
 
-    public static String fecha() {
-        return lorem.getFutureDate(java.time.Duration.ofHours(random.nextInt(100)))
-                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+    public static Date fecha() {
+        var fecha = lorem.getFutureDate(java.time.Duration.ofHours(random.nextInt(100)))
+                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd")).split("-");
+        return new Date(Integer.parseInt(fecha[0]), Integer.parseInt(fecha[1]), Integer.parseInt(fecha[2]));
     }
 
     public static String[] generarDirecciones() {
@@ -73,5 +84,11 @@ public class Datos {
             direcciones[i] = "Calle " + lorem.getName() + (i + 1) + ", Ciudad" + lorem.getCity() + ", País " + lorem.getCountry();
         }
         return direcciones;
+    }
+
+    public static String getMetodoEnvio() {
+        var i = metodoEnvio.length < 2 ? 1 : metodoEnvio.length - 1;
+        var index = random.nextInt(i);
+        return metodoEnvio[index < 0 ? 0 : index];
     }
 }

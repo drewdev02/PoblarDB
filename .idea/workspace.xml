@@ -22,9 +22,6 @@
       <change afterPath="$PROJECT_DIR$/../IdeaProjects/core.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../IdeaProjects/userCrud.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../PYscrapy/.idea/PYscrapy.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Datos.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../PycharmProjects/PersonalBOT/.idea/PersonalBOT.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../PycharmProjects/Recidencia/.idea/Recidencia.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../PycharmProjects/Scraper/.idea/Scraper.iml" afterDir="false" />
@@ -35,12 +32,11 @@
       <change afterPath="$PROJECT_DIR$/../PycharmProjects/pythonProject2/.idea/pythonProject2.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../google_messages_scraper/.idea/google_messages_scraper.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8a3345b1c694c0313db79fd4936e82440f16761e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8a3345b1c694c0313db79fd4936e82440f16761e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/1/a110cc0d14e456c684d2e750fdce43cdde9c44a4" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/1/a110cc0d14e456c684d2e750fdce43cdde9c44a4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e44a8606ce010ad9b89aafdfcee2ab49afbf6d10" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e44a8606ce010ad9b89aafdfcee2ab49afbf6d10" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Datos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Datos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +118,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701210152797</updated>
-      <workItem from="1701210153768" duration="15467000" />
+      <workItem from="1701210153768" duration="20019000" />
     </task>
     <servers />
   </component>
@@ -142,5 +138,16 @@
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Datos.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

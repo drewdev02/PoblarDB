@@ -1,4 +1,5 @@
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -118,7 +119,7 @@ public class DataBase {
     }
 
     public static void insertarPedidoEmpleado(int empID, int pedidoID) {
-        var queryPedidoEmpleado = "INSERT INTO Producto (emp_ID, pedido_ID) VALUES (?, ?)";
+        var queryPedidoEmpleado = "INSERT INTO Pedido_Empleado (emp_ID, pedido_ID) VALUES (?, ?)";
 
         try (var statement = connection.prepareStatement(queryPedidoEmpleado)) {
             statement.setInt(1, empID);
@@ -153,11 +154,11 @@ public class DataBase {
         }
     }
 
-    public static void insertarCompra(int user_ID, String fecha, int ganancia, int pedidos) {
+    public static void insertarCompra(int user_ID, Date fecha, int ganancia, int pedidos) {
         var queryCompra = "INSERT INTO Compra (user_ID, fecha, ganancia, pedidos)VALUES (?, ?,?, ?)";
         try (var statement = connection.prepareStatement(queryCompra)) {
             statement.setInt(1, user_ID);
-            statement.setString(2, fecha);
+            statement.setDate(2, fecha);
             statement.setInt(3, ganancia);
             statement.setInt(4, pedidos);
             statement.executeUpdate();
@@ -174,6 +175,28 @@ public class DataBase {
             statement.setInt(2, cantidadCompra);
             statement.setInt(3, coste);
             statement.setInt(4, proveedorCompra);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void insertarFactura(int comp_ID, int cant_pedidos) {
+        var queryFactura = "INSERT INTO Factura ( comp_ID, cant_pedidos) VALUES (?,?)";
+        try (var statement = connection.prepareStatement(queryFactura)) {
+            statement.setInt(1, comp_ID);
+            statement.setInt(2, cant_pedidos);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void insertarInforEnvio(int user_ID, String metodo) {
+        var queryInforEnvio = "INSERT INTO Info_envio (user_ID, metodo) VALUES (?,?)";
+        try (var statement = connection.prepareStatement(queryInforEnvio)) {
+            statement.setInt(1, user_ID);
+            statement.setString(2, metodo);
             statement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

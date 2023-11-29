@@ -1,8 +1,9 @@
 
 x
-java:S1104"VMake categorias a static final constant or non-public and provide accessors if needed.(¶ÑÂíşÿÿÿÿ8íÆ¯ÌÁ1
+java:S1104"VMake categorias a static final constant or non-public and provide accessors if needed.(¶ÑÂíşÿÿÿÿ8úÿÈÎÁ1
 R
-java:S1444"0Make this "public static categorias" field final(¶ÑÂíşÿÿÿÿ8îÆ¯ÌÁ1
+java:S1444"0Make this "public static categorias" field final(¶ÑÂíşÿÿÿÿ8ûÿÈÎÁ1
 \
-java:S1118
-":Add a private constructor to hide the implicit public one.(ÑğÓ†ıÿÿÿÿ8Ç¯ÌÁ1
+java:S1118":Add a private constructor to hide the implicit public one.(ÑğÓ†ıÿÿÿÿ8–€ÉÎÁ1
+N
+java:S1874N",Remove this use of "Date"; it is deprecated.(úô‡­ùÿÿÿÿ8¨€ÉÎÁ1
